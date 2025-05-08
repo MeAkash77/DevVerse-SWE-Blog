@@ -4,7 +4,7 @@ A modern, high-performance full-stack app built with [Next.js](https://nextjs.or
 
 <p align="center">
   <strong>Visit DevVerse:</strong><br/>
-  <a href="https://devverse-swe.vercel.app" target="_blank" rel="noopener">
+  <a href="https://dev-verse-swe-blog-three.vercel.app/" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/🌐%20DevVerse-devverse--swe.vercel.app-0070f3?style=flat-square&logo=vercel&logoColor=white" alt="Visit DevVerse" />
   </a>
 </p>
