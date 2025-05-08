@@ -61,9 +61,7 @@ Feel free to contribute your own articles, improve the existing content, or cust
 
 ## Live Application
 
-The blog is deployed on Vercel and can be accessed at [https://devverse-swe.vercel.app/](https://devverse-swe.vercel.app/).
-
-The backup deployment is available on Netlify at [https://devverse-swe.netlify.app](https://devverse-swe.netlify.app).
+The blog is deployed on Vercel and can be accessed at [https://dev-verse-swe-blog-three.vercel.app/](https://dev-verse-swe-blog-three.vercel.app/).
 
 Feel free to explore the content and features of the blog! 🚀
 
@@ -193,7 +191,7 @@ devverse-cs-swe-blog/
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/hoangsonww/DevVerse-SWE-Blog.git
+   git clone https://github.com/MeAkash77/DevVerse-SWE-Blog.git
    cd DevVerse-CS-SWE-Blog
    ```
 
@@ -456,10 +454,6 @@ This project is licensed under the [MIT License](LICENSE).
 - **Docker Documentation:** [https://docs.docker.com/](https://docs.docker.com/)
 - **VS Code Dev Containers:** [https://code.visualstudio.com/docs/remote/containers](https://code.visualstudio.com/docs/remote/containers)
 
-Reach out to me at [@hoangsonww](https://github.com/hoangsonww) for any questions or feedback. I'd love to hear from you!
-
 ---
 
 *This project is powered by Next.js and serves as a testament to the framework's capabilities in building modern, scalable, and high-performance web applications. Happy coding!* 🚀
-
-[🔝 Back to top](#devverse-computer-science--software-engineering-blog)
