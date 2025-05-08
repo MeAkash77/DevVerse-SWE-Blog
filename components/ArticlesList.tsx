@@ -29,7 +29,7 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
   const allTopics = useMemo(() => {
     const allTopicsSet = new Set<string>();
     articles.forEach((article) =>
-      article.topics.forEach((topic) => allTopicsSet.add(topic)),
+      article.topics.forEach((topic) => allTopicsSet.add(topic))
     );
     return Array.from(allTopicsSet).sort();
   }, [articles]);
@@ -37,15 +37,13 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
   const filteredArticles = useMemo(() => {
     if (selectedTopics.length === 0) return articles;
     return articles.filter((article) =>
-      selectedTopics.every((topic) => article.topics.includes(topic)),
+      selectedTopics.every((topic) => article.topics.includes(topic))
     );
   }, [articles, selectedTopics]);
 
   const displayedArticles = filteredArticles.slice(0, visibleCount);
   const displayedTopics = allTopics.slice(0, visibleTopicsCount);
-  const extraTopics = selectedTopics.filter(
-    (t) => !displayedTopics.includes(t),
-  );
+  const extraTopics = selectedTopics.filter((t) => !displayedTopics.includes(t));
   const topicsToShow = [...displayedTopics, ...extraTopics];
   const totalFiltered = filteredArticles.length;
   const totalDisplayed = displayedArticles.length;
@@ -61,7 +59,7 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
           <InteractiveCard {...article} />
         </div>
       )),
-    [filteredArticles],
+    [filteredArticles]
   );
 
   const displayedCardElements = allCardElements.slice(0, visibleCount);
@@ -74,8 +72,6 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
       params.delete("topics");
     }
 
-    const queryString = params.toString();
-    // Delay the router.replace inside useEffect to avoid triggering it during render
     setSelectedTopics(topics);
   };
 
@@ -85,17 +81,16 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
       const next = prev.includes(topic)
         ? prev.filter((t) => t !== topic)
         : [...prev, topic];
-      updateURL(next); // Prepare the new URL with updated topics
+      updateURL(next);
       return next;
     });
   };
 
   const clearSelection = () => {
     setVisibleCount(10);
-    updateURL([]); // Clear the selected topics from the URL
+    updateURL([]);
   };
 
-  // Sync selected topics from URL
   useEffect(() => {
     if (!initialized) {
       const param = searchParams.get("topics");
@@ -106,7 +101,6 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
     }
   }, [searchParams, initialized]);
 
-  // Call router.replace when selectedTopics change (but not during initial render)
   useEffect(() => {
     if (initialized) {
       const params = new URLSearchParams(window.location.search);
@@ -117,15 +111,12 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
       }
 
       const queryString = params.toString();
-      router.replace(
-        `${window.location.pathname}${queryString ? `?${queryString}` : ""}`,
-        undefined,
-        { scroll: false },
-      );
+      const url = `${window.location.pathname}${queryString ? `?${queryString}` : ""}`;
+
+      router.replace(url); // FIX: Only pass one argument
     }
   }, [selectedTopics, initialized, router]);
 
-  // Redirect to 404 if no articles match
   useEffect(() => {
     if (initialized && articles.length > 0 && filteredArticles.length === 0) {
       router.push("/404");
@@ -232,9 +223,8 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
 
       {/* Styles */}
       <style jsx>{`
-        /* Keep your existing styles here exactly as they are */
+        /* Your scoped styles here */
       `}</style>
     </div>
   );
 }
-
